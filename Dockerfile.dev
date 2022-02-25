@@ -1,0 +1,9 @@
+FROM node:16
+
+WORKDIR /app
+
+VOLUME /app
+
+EXPOSE 3000
+
+CMD npm install --unsafe-perm=true --allow-root && npm run dev

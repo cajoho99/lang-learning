@@ -1,0 +1,14 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - ${FRONTEND_PORT}:3000
+    volumes:
+      - .:/app
+      - /app/.svelte-kit
+      - /app/node_modules
+
+    
