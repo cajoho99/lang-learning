@@ -6,6 +6,7 @@
     let i = Math.floor(Math.random()*polish.words.length)
     currentWord = polish.words[i].polish
   }
+
 </script>
 
 

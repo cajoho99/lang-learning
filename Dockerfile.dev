@@ -6,4 +6,5 @@ VOLUME /app
 
 EXPOSE 3000
 
-CMD npm install --unsafe-perm=true --allow-root && npm run dev
+CMD yarn && yarn knex migrate:latest && yarn dev --host
+#CMD yarn  && yarn dev --host
