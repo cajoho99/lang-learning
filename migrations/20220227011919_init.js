@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 export async function up(knex) {
-  return knex.schema.createTable(process.env.POSTGRES_DB, (table) => {
+  return knex.schema.createTable('words', (table) => {
     table.increments();
     table.string('user').unique().notNullable();
     table.date('word').notNullable();
@@ -18,5 +18,5 @@ export async function up(knex) {
  * @returns { Promise<void> }
  */
 export async function down(knex) {
-  return knex.schema.dropTable(process.env.POSTGRES_DB)
+  return knex.schema.dropTable('words')
 }
