@@ -6,4 +6,6 @@ export function getRandomWord(start=0, end=polish.words.length)
   return polish.words[i]
 }
 
+
+
 // som ett sätt att analysera lärarens bedömningsuppdrag
