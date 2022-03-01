@@ -4,13 +4,15 @@
  */
 export async function up(knex) {
   return knex.schema.createTable('words', (table) => {
-    table.increments();
-    table.string('user').unique().notNullable();
-    table.date('word').notNullable();
+    table.uuid('userId');//references('id').inTable('users').onDelete('CASCADE');
+    table.string('word').notNullable();
+    table.string('language').notNullable();
     table.integer('repetitions').notNullable();
     table.integer('interval').notNullable();
     table.float('efactor').notNullable();
-   }); 
+    table.unique(['word', 'userId', 'language']);
+   });
+
 }
 
 /**
